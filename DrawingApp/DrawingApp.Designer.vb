@@ -1,9 +1,8 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
-    Inherits System.Windows.Forms.Form
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class DrawingApp
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +19,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -38,15 +37,15 @@ Partial Class Form1
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 73)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(666, 420)
+        Me.PictureBox1.Size = New System.Drawing.Size(804, 420)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(688, 239)
+        Me.Button1.Location = New System.Drawing.Point(302, 512)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(26, 25)
         Me.Button1.TabIndex = 1
@@ -54,7 +53,7 @@ Partial Class Form1
         '
         'TrackBar1
         '
-        Me.TrackBar1.Location = New System.Drawing.Point(687, 125)
+        Me.TrackBar1.Location = New System.Drawing.Point(12, 512)
         Me.TrackBar1.Name = "TrackBar1"
         Me.TrackBar1.Size = New System.Drawing.Size(104, 45)
         Me.TrackBar1.TabIndex = 2
@@ -62,7 +61,7 @@ Partial Class Form1
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button2.Location = New System.Drawing.Point(675, 12)
+        Me.Button2.Location = New System.Drawing.Point(238, 512)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(26, 25)
         Me.Button2.TabIndex = 3
@@ -71,7 +70,7 @@ Partial Class Form1
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.DarkRed
-        Me.Button3.Location = New System.Drawing.Point(707, 12)
+        Me.Button3.Location = New System.Drawing.Point(270, 512)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(26, 25)
         Me.Button3.TabIndex = 4
@@ -80,7 +79,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(676, 106)
+        Me.Label1.Location = New System.Drawing.Point(1, 493)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 5
@@ -89,24 +88,24 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(676, 157)
+        Me.Label2.Location = New System.Drawing.Point(111, 493)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(38, 13)
+        Me.Label2.Size = New System.Drawing.Size(41, 13)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Width:"
+        Me.Label2.Text = "Height:"
         '
         'TrackBar2
         '
-        Me.TrackBar2.Location = New System.Drawing.Point(687, 176)
+        Me.TrackBar2.Location = New System.Drawing.Point(122, 512)
         Me.TrackBar2.Name = "TrackBar2"
         Me.TrackBar2.Size = New System.Drawing.Size(104, 45)
         Me.TrackBar2.TabIndex = 6
         '
-        'Form1
+        'DrawingApp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(786, 487)
+        Me.ClientSize = New System.Drawing.Size(810, 569)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TrackBar2)
         Me.Controls.Add(Me.Label1)
@@ -115,8 +114,8 @@ Partial Class Form1
         Me.Controls.Add(Me.TrackBar1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "DrawingApp"
+        Me.Text = "DrawingApp"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()

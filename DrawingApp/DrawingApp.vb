@@ -1,5 +1,8 @@
-﻿Public Class Form1
-    Private m_Previous As System.Nullable(Of Point) = Nothing
+﻿Imports MaterialSkin
+
+Partial Class DrawingApp
+    Inherits MaterialSkin.Controls.MaterialForm
+    Private m_Previous As Point? = Nothing
     Dim m_shapes As New Collection
     Dim c As Color
     Dim w As Integer
@@ -12,10 +15,15 @@
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
+
             Dim l As New Square(PictureBox1.Image, m_Previous, e.Location)
             l.Pen = New Pen(c, w)
             l.W = TrackBar1.Value
             l.H = TrackBar2.Value
+
+            ' Dim l As New Line(PictureBox1.Image, m_Previous, e.Location)
+            '   l.Pen = New Pen(c, w)
+
             m_shapes.Add(l)
             PictureBox1.Invalidate()
             m_Previous = e.Location
@@ -26,6 +34,11 @@
         m_Previous = Nothing
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
+        SkinManager.AddFormToManage(Me)
+        SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
+        SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE)
+
         If PictureBox1.Image Is Nothing Then
             Dim bmp As New Bitmap(PictureBox1.Width, PictureBox1.Height)
             Using g As Graphics = Graphics.FromImage(bmp)
@@ -37,7 +50,9 @@
     End Sub
 
     Private Sub PictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles PictureBox1.Paint
+
         For Each s As Object In m_shapes
+
             s.Draw()
         Next
     End Sub
