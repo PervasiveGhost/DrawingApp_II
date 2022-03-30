@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.vb" />
+    <Compile Include="Ngon.vb" />
     <Compile Include="DrawingApp.vb">
       <SubType>Form</SubType>
     </Compile>

@@ -6,25 +6,29 @@ Partial Class DrawingApp
     Dim m_shapes As New Collection
     Dim c As Color
     Dim w As Integer
+    Dim Type As String
 
 
     Private Sub pictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
         m_Previous = e.Location
         pictureBox1_MouseMove(sender, e)
     End Sub
-
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
+            Dim d As Object
 
-            Dim l As New Square(PictureBox1.Image, m_Previous, e.Location)
-            l.Pen = New Pen(c, w)
-            l.W = TrackBar1.Value
-            l.H = TrackBar2.Value
+            If Type = "Line" Then
+                d = New Line(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+            End If
+            If Type = "Ngon" Then
+                d = New Ngon(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+                d.Radius = TrackBar4.Value
+                d.Sides = TrackBar3.Value
+            End If
 
-            ' Dim l As New Line(PictureBox1.Image, m_Previous, e.Location)
-            '   l.Pen = New Pen(c, w)
-
-            m_shapes.Add(l)
+            m_shapes.Add(d)
             PictureBox1.Invalidate()
             m_Previous = e.Location
         End If
@@ -74,5 +78,9 @@ Partial Class DrawingApp
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
         w = TrackBar1.Value
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Type = "Ngon"
     End Sub
 End Class
