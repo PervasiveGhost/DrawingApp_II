@@ -20,12 +20,20 @@ Partial Class DrawingApp
             If Type = "Line" Then
                 d = New Line(PictureBox1.Image, m_Previous, e.Location)
                 d.Pen = New Pen(c, w)
+                d.Xspeed = xSpeedTrackBar.Value
             End If
             If Type = "Ngon" Then
                 d = New Ngon(PictureBox1.Image, m_Previous, e.Location)
                 d.Pen = New Pen(c, w)
                 d.Radius = TrackBar4.Value
                 d.Sides = TrackBar3.Value
+            End If
+            If Type = "Picture" Then
+                d = New PBox(PictureBox1.Image, m_Previous, e.Location)
+                d.w = TrackBar1.Value
+                d.h = TrackBar1.Value
+
+                d.picture = PictureBox2.Image
             End If
 
             m_shapes.Add(d)
@@ -82,5 +90,18 @@ Partial Class DrawingApp
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Type = "Ngon"
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Type = "Picture"
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        OpenFileDialog1.ShowDialog()
+    End Sub
+
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+        PictureBox2.Load(OpenFileDialog1.FileName)
+
     End Sub
 End Class
